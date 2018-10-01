@@ -1,0 +1,128 @@
+*{
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+body{
+    margin:0;
+    padding:0;
+    width: 100vw;
+    overflow-x: hidden;
+    font:{
+        family:$font1;
+    } 
+    
+}
+
+h1,h2,h3,h4,h5,h6{
+}
+
+h1{
+    font:{
+        family: $font1;
+        size: 1.6em;
+        weight:900;
+    }
+    color:$brand1;
+}
+
+h2{
+    font:{
+        family: $font1;
+        size: 1.4em;
+        weight:700;
+    }
+    color:$brand2;
+}
+
+h3{ 
+    font:{
+        family: $font1;
+        size: 1em;
+        weight:700;
+    }
+    color:$brand1;
+}
+
+h4{
+    font:{
+        family: $font2;
+        size: 0.875em;
+        weight:500;
+    }
+    color:$brand1;
+}
+ 
+h5{
+    font:{
+        family: $font2;
+        size: 0.75em;
+        weight:700;
+    }
+    margin-bottom: 3vh;
+    color:$brand1;
+}
+
+h6{
+    font:{
+        family: $font2;
+        size: 0.7em;
+        weight:400;
+    }
+}
+
+p{ 
+    font:{
+        family: $font2;
+        size: 0.75em;
+        weight:400;
+    }
+    margin:0;
+    color: $gray1; 
+}
+
+a, button{
+    text-decoration:none;
+    font:{
+        size:0.875em;
+    }
+}
+
+nav{
+    a{
+        font:{
+            family: $font1;
+            size: 1em;
+            weight:800;
+        }
+        color: $brand1;
+    }
+}
+
+ul,li{
+    padding:0;
+}
+
+li{
+    margin-bottom: 5px;
+    list-style: none;
+    font:{
+        size:0.875em;
+    }
+}
+
+img{
+}
+
+.section{
+}
+
+/*******************      Button       ********************/
+button{
+    border:none;
+    background:none;
+    outline: none;
+    color: #fff;
+    background-color: $brand1;
+    padding: 30px 50px;
+}
