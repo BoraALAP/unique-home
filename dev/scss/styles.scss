@@ -82,6 +82,10 @@ header{
 	    rect{
 	    	transition: 1s ease;
 	    }
+
+	    @include MQ($M){
+	    	display:none;
+	    }
     }
 
 	nav{
@@ -89,7 +93,6 @@ header{
 		position:fixed;
 		top: 80px;
 		background-color: $brand5;
-		color:$white;
 		width: 100vw;
 		padding: $gutter ($gutter * 2);
 		box-sizing: border-box;
@@ -100,6 +103,30 @@ header{
 		    width: 100%;
 		    display: grid;
 		}
+
+		@include MQ($M){
+	    	position:initial;
+	    	background:none;
+	    	transform: none; 
+	    	width:initial;
+	    	padding:0;
+	    	ul{
+    		    display: grid;
+			    grid-template-columns: repeat(5, auto);
+			    grid-gap:5px;
+			    margin:0;
+			    li{
+			    	margin:0;
+			    }
+			    a{
+			    	color:$brand4;
+			    	padding: 5px;
+			    	font:{
+			    		weight:500;
+			    	}
+			    }
+	    	}
+	    }
 	}
 }
 
@@ -126,9 +153,10 @@ footer{
 	background-image: url("/assets/img/enterence_img.jpg");
     background-position: center center;
     background-size: cover;
-    padding: 9vw 6vw;
+    padding: ($gutter * 3) ($gutter * 2) $gutter ;
 
     #header_text{
+    	max-width:600px;
     	h1,p{
     		color:$white;
     		text-shadow: 2px 2px 5px rgba($black, 0.3);
@@ -137,21 +165,23 @@ footer{
 
     img{
 	    height: 20px;
-	    margin-top: 40px;
     }
 
     .scroll_down{
 	    padding: 15px;
-	    margin: 10px auto;
+	    margin: 40px auto 0;
 	    width: fit-content;
 	    height: min-content;
+	    background: none;
+	    border: none;
     }
 }
 
 #projects{
+	display:grid;
+	grid-gap: $gutter;
 	.project{
-		margin-bottom: 50px;
-		position:relative;
+
 	}
 	small{
 		padding-left: 20px;
@@ -161,6 +191,45 @@ footer{
 		position:relative;
 	}
 	//Arrow controls are in _custom.scss
+
+
+	@include MQ($M){
+		grid-template-columns: auto auto;
+	    .title{
+	    	display: grid;
+		    grid-column: span 2;
+		}
+		.project{
+			position:relative;
+			&:nth-child(2){
+				width:30vw;
+				margin-left:10vw;
+			}
+
+			&:nth-child(3){
+				width:35vw;
+				margin-top:10vw;
+				margin-left:3vw;
+			}
+
+			&:nth-child(4){
+				width:40vw;
+				margin-top:-7vw;
+			}
+
+			&:nth-child(5){
+				width:25vw;
+				margin-left:20vw;
+				margin-top:7vw;
+			}
+
+			&:last-child{
+				width:45vw;
+				margin-left:17vw;
+				grid-column:span 2;
+			}
+		}
+	}
 }
 
 #services{
@@ -172,6 +241,7 @@ footer{
 			padding:20px;
 			li{
 				list-style: disc;
+			    padding: 5px;
 			}
 		}
 	}
@@ -191,14 +261,44 @@ footer{
 	.services_image{
 		position:relative;
 	}
+
+	@include MQ($M){
+	    display: grid;
+	    grid-template-columns: 1fr 1fr;
+	    .title{
+	    	grid-column: span 2;
+	    }
+
+	    #service_message{
+    	    margin: -130px 0;
+		    position: relative;
+		    grid-column: span 2;
+		    width: 60vw;
+	    }
+	}
 }
 
 #about{
+	display:grid;
 	img{
 		display:none;
 	}
 	#about_text{
 		margin-top:40px;
+		max-width:$L;
+	}
+
+	@include MQ($L){
+		margin-top: 9vw;
+		grid-template-columns:1fr 1fr;
+		grid-gap:$gutter;
+		img{
+			display:grid;
+		}
+
+		h2{
+			margin-left:0;
+		}
 	}
 }
 

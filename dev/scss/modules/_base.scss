@@ -20,6 +20,8 @@ body{
 
 main{
     padding: 95px ($gutter * 2) 0;
+    display: grid;
+    grid-gap: $gutter *3;
 }
 
 h1,h2,h3,h4,h5,h6{
@@ -43,6 +45,7 @@ h2,.h2{
     color:$brand4;
     text-transform:uppercase;
     margin-top:10px;
+    margin-left:$gutter / 2;
 }
 
 h3,.h3{ 
@@ -87,9 +90,10 @@ p{
         size: 0.875em;
         weight:400;
     }
-    margin:0 0 0 20px;
+    margin-left:20px;
     color: $brand3; 
     line-height: 30px;
+    
 }
 
 a, button{
@@ -130,7 +134,7 @@ img{
 }
 
 section{
-    margin: 100px 0;
+    
 }
 
 /*******************      Button       ********************/
