@@ -280,6 +280,7 @@ footer{
 
 #about{
 	display:grid;
+	margin-top: $gutter * 2;
 	img{
 		display:none;
 	}
