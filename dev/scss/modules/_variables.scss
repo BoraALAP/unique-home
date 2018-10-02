@@ -1,22 +1,23 @@
 
 
 //colors
-
-
 $white: #FFFFFF; // White
 $black: #000000; // Black
 
-$gray1: #293234; // light gray	
+$gray1: #F0F0F0; // light gray	
 $gray2: #404E53; // mid gray
 $gray3: #C7CACB; // darker gray
 
-$brand1: #0d475a; 
-$brand2: #40798C;
-$brand3: #70A9A1;
-$brand4: #CFD7C7;
-$brand5: #F6F1D1;
+$brand1: #5BC0BE; // green
+$brand2: #3874BC;
+$brand3: #3A506B;
+$brand4: #1C2541;
+$brand5: #0B132B; //darkest blue
 
 
 //transition styles
 
 $transition-load: cubic-bezier(0.45, 0.1, 0.02, 1.04);
+
+//Size
+$gutter: 3vw;

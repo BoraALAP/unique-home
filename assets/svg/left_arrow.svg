@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>left_arrow</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="14 16.5 20 12 20 13.5 14 18 8 13.5 8 12"></polygon>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="UI/Project-Cart/Mobile" transform="translate(-20.000000, -99.000000)">
+            <g id="left_arrow" transform="translate(20.000000, 99.000000)">
+                <circle id="Oval-2" fill="#1C2541" cx="15" cy="15" r="15"></circle>
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Mask" fill="#FFFFFF" transform="translate(14.000000, 15.000000) rotate(90.000000) translate(-14.000000, -15.000000) " xlink:href="#path-1"></use>
+            </g>
+        </g>
+    </g>
+</svg>

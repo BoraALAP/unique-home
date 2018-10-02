@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="27px" viewBox="0 0 20 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>scroll down</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="10 7.5 20 0 20 2.5 10 10 0 2.5 0 0"></polygon>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-710.000000, -909.000000)">
+            <g id="Welcome" transform="translate(72.000000, 98.000000)">
+                <g id="scroll-down" transform="translate(638.000000, 811.000000)">
+                    <g id="UI/Arrow/Down" transform="translate(0.000000, 12.000000)">
+                        <g id="Brand/Color/Mid" transform="translate(0.000000, 5.000000)">
+                            <mask id="mask-2" fill="white">
+                                <use xlink:href="#path-1"></use>
+                            </mask>
+                            <use id="Mask" fill="#FFFFFF" xlink:href="#path-1"></use>
+                            <g id="Brand/Color/White" mask="url(#mask-2)" fill="#FFFFFF">
+                                <g transform="translate(0.000000, -5.000000)" id="Rectangle">
+                                    <rect x="0" y="0" width="20" height="20"></rect>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                    <circle id="Oval" fill="#FFFFFF" opacity="0.800000012" cx="10" cy="11" r="2"></circle>
+                    <circle id="Oval" fill="#FFFFFF" opacity="0.5" cx="10" cy="2" r="2"></circle>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

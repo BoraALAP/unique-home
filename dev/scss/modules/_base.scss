@@ -3,57 +3,67 @@
     -webkit-font-smoothing: antialiased;
 }
 
+html{
+    @include scrollbars(0.5em, $brand5);  
+}
+
 body{
     margin:0;
     padding:0;
     width: 100vw;
     overflow-x: hidden;
     font:{
-        family:$font1;
+        family:$font2;
     } 
     
+}
+
+main{
+    padding: 95px ($gutter * 2) 0;
 }
 
 h1,h2,h3,h4,h5,h6{
 }
 
-h1{
+h1,.h1{
     font:{
         family: $font1;
-        size: 1.6em;
-        weight:900;
-    }
-    color:$brand1;
-}
-
-h2{
-    font:{
-        family: $font1;
-        size: 1.4em;
+        size: 2em;
         weight:700;
     }
-    color:$brand2;
+    color:$brand5;
 }
 
-h3{ 
+h2,.h2{
     font:{
         family: $font1;
-        size: 1em;
+        size: 1.5em;
         weight:700;
     }
-    color:$brand1;
+    color:$brand4;
+    text-transform:uppercase;
+    margin-top:10px;
 }
 
-h4{
+h3,.h3{ 
+    font:{
+        family: $font1;
+        size: 1.2em;
+        weight:700;
+    }
+    color:$brand4;
+}
+
+h4,.h4{
     font:{
         family: $font2;
-        size: 0.875em;
+        size: 1em;
         weight:500;
     }
-    color:$brand1;
+    color:$brand4;
 }
  
-h5{
+h5,.h5{
     font:{
         family: $font2;
         size: 0.75em;
@@ -63,7 +73,7 @@ h5{
     color:$brand1;
 }
 
-h6{
+h6,.h6{
     font:{
         family: $font2;
         size: 0.7em;
@@ -74,11 +84,12 @@ h6{
 p{ 
     font:{
         family: $font2;
-        size: 0.75em;
+        size: 0.875em;
         weight:400;
     }
-    margin:0;
-    color: $gray1; 
+    margin:0 0 0 20px;
+    color: $brand3; 
+    line-height: 30px;
 }
 
 a, button{
@@ -91,11 +102,14 @@ a, button{
 nav{
     a{
         font:{
-            family: $font1;
+            family: $font2;
             size: 1em;
-            weight:800;
+            weight:700;
         }
-        color: $brand1;
+        color: $brand5;
+        &.white_link{
+            color: $white;
+        }
     }
 }
 
@@ -112,17 +126,33 @@ li{
 }
 
 img{
+    width:100%;
 }
 
-.section{
+section{
+    margin: 100px 0;
 }
 
 /*******************      Button       ********************/
-button{
+.btn{
     border:none;
     background:none;
     outline: none;
-    color: #fff;
-    background-color: $brand1;
-    padding: 30px 50px;
+    padding: 16px 50px;
+    border-radius: 3px;
+    margin-top:30px;
+    font:{
+        weight:600;
+        family:$font2;
+        size:1em;
+    }
+    &.btn_dark{
+        background-color: $brand5;
+        color: $white;
+    }
+
+    &.btn_light{
+        background-color: $white;
+        color: $brand5;
+    }
 }

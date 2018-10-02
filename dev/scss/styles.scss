@@ -20,28 +20,201 @@ TEMPLATES begin
     
 
 /*-----------------------------------------------------------------------------------
-    1.  GENERAL ELEMENTS
-    2.  GLOBALS
+    
+    1.  GLOBALS
      
 -----------------------------------------------------------------------------------*/
-/*---------------------------------------------- 
-1. GENERAL ELEMENTS
-------------------------------------------------*/
 
-html{
-    @include scrollbars(0.5em, $black);  
+/*---------------------------------------------- 
+1. GLOBALS
+------------------------------------------------*/
+html.disable_scroll{
+	position:fixed;
+	overflow:hidden;
+	#menu_icon{
+		&.close{
+	    	svg{
+	    		rect{
+	    			
+	    			transform-origin: center center;
+	    			&:first-child{
+	    				transform: rotate(45deg) translate(0px, 6px);
+	    			}
+	    			&:nth-child(2){
+		    			transform: translateX(20px);
+					    opacity: 0;
+					}
+					&:last-child{
+	    				transform: rotate(-45deg) translate(0px, -8px);
+	    			}
+	    		}
+	    	}
+	    }
+	}
+
+	nav[aria-expanded="true"]{
+		transform: translateX(0vw); 
+	}
 }
 
-/*---------------------------------------------- 
-2. GLOBALS
-------------------------------------------------*/
-
-
 header{
+	display: grid;
+    grid-template-columns: auto auto;
+    padding:20px ($gutter * 2);
+    align-items: center;
+    background-color: $white;
+    justify-content: space-between;
+    position:fixed;
+    width: 100vw;
+    z-index: 10000;
+    box-sizing: border-box;
+    img{
+    	max-width:260px;
+    }
 
+    #logo, #menu_icon {
+    	z-index: 10000;
+    	display:grid;
+    }
+    #menu_icon{
+	    padding: 10px;
+	    transition: 1s ease;
+	    rect{
+	    	transition: 1s ease;
+	    }
+    }
+
+	nav{
+		transform: translateX(100vw); 
+		position:fixed;
+		top: 80px;
+		background-color: $brand5;
+		color:$white;
+		width: 100vw;
+		padding: $gutter ($gutter * 2);
+		box-sizing: border-box;
+		transition: 1s ease;
+		a{
+			color:$white;
+		    padding: 10px 10px;
+		    width: 100%;
+		    display: grid;
+		}
+	}
 }
 
 
 footer{
-    
+    width: 100vw;
+    position:absolute;
+    background-color:$brand5;
+    padding: $gutter * 2;
+    text-align:right;
+    box-sizing: border-box;
+    color:$white;
+    margin-top:$gutter * 2;
+    a{
+    	color:$white;
+    	text-decoration:underline;
+    	font-size: inherit;
+    }
+}
+
+#header{
+	margin-top:0;
+	display:grid;    
+	background-image: url("/assets/img/enterence_img.jpg");
+    background-position: center center;
+    background-size: cover;
+    padding: 9vw 6vw;
+
+    #header_text{
+    	h1,p{
+    		color:$white;
+    		text-shadow: 2px 2px 5px rgba($black, 0.3);
+    	}
+    }
+
+    img{
+	    height: 20px;
+	    margin-top: 40px;
+    }
+
+    .scroll_down{
+	    padding: 15px;
+	    margin: 10px auto;
+	    width: fit-content;
+	    height: min-content;
+    }
+}
+
+#projects{
+	.project{
+		margin-bottom: 50px;
+		position:relative;
+	}
+	small{
+		padding-left: 20px;
+		color: $brand3;
+	}
+	.project_image{
+		position:relative;
+	}
+	//Arrow controls are in _custom.scss
+}
+
+#services{
+
+	#lists{
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		ul{
+			padding:20px;
+			li{
+				list-style: disc;
+			}
+		}
+	}
+
+	#service_message{
+		z-index:1000;
+		background-color: $brand2;
+		padding:$gutter * 2;
+	    margin: -40px $gutter;
+	    position: relative;
+		p{
+			margin-left:0;
+			color:white;
+		}
+	}
+
+	.services_image{
+		position:relative;
+	}
+}
+
+#about{
+	img{
+		display:none;
+	}
+	#about_text{
+		margin-top:40px;
+	}
+}
+
+#contact{
+	background-color:$brand4;
+	text-align:center;
+	padding: ($gutter * 4);
+
+	p,h2,h4,a{
+		color:white;
+	}
+	p{
+		margin-left:0;
+	}
+
+	a{
+		text-decoration:underline;
+	}
 }
