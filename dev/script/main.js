@@ -1,5 +1,5 @@
 	// const pull_data = () => {
-		fetch('/public/js/projects.json')
+		fetch('./public/js/projects.json')
 		.then((Response) => {
 			return Response.json();
 		}).then((data) => {
@@ -82,6 +82,8 @@
 					});
 				})
 			})
+		}).catch((error) => {
+			console.log(error);
 		})
 	// }
 
