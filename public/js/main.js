@@ -10,7 +10,7 @@
 	}var i = typeof require == "function" && require;for (var o = 0; o < r.length; o++) s(r[o]);return s;
 })({ 1: [function (require, module, exports) {
 		// const pull_data = () => {
-		fetch('/dev/script/projects.json').then(Response => {
+		fetch('/public/js/projects.json').then(Response => {
 			return Response.json();
 		}).then(data => {
 			const projects = data.projects;
