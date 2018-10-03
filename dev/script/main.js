@@ -1,5 +1,5 @@
 	// const pull_data = () => {
-		fetch('/dev/script/projects.json')
+		fetch('/public/js/projects.json')
 		.then((Response) => {
 			return Response.json();
 		}).then((data) => {
