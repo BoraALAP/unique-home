@@ -29,7 +29,6 @@ TEMPLATES begin
 1. GLOBALS
 ------------------------------------------------*/
 html.disable_scroll{
-	position:fixed;
 	overflow:hidden;
 	#menu_icon{
 		&.close{
@@ -53,7 +52,7 @@ html.disable_scroll{
 	}
 
 	nav[aria-expanded="true"]{
-		transform: translateX(0vw); 
+		transform: translateY(0vw); 
 	}
 }
 
@@ -89,7 +88,7 @@ header{
     }
 
 	nav{
-		transform: translateX(100vw); 
+		transform: translateY(-100vw); 
 		position:fixed;
 		top: 80px;
 		background-color: $brand5;
@@ -148,7 +147,7 @@ footer{
 }
 
 #header{
-	margin-top:0;
+	margin-top:90px;
 	display:grid;    
 	background-image: url("../../assets/img/enterence_img.jpg");
     background-position: center center;
@@ -175,21 +174,38 @@ footer{
 	    background: none;
 	    border: none;
     }
+
+    @include MQ($M){
+        margin-top: 120px;
+    }
 }
 
 #projects{
 	display:grid;
 	grid-gap: $gutter;
 	.project{
+		.project_image{
+			position:relative;
+			.image_container{
+				position: relative;
+				height: calc(90vw * 9 /16);
+				img{
+					position:absolute;
+				    top: 0;
+
+				    &.active{
+				    	z-index:90;
+				    }
+				}
+			}
+		}
 
 	}
 	small{
 		padding-left: 20px;
 		color: $brand3;
 	}
-	.project_image{
-		position:relative;
-	}
+	
 	//Arrow controls are in _custom.scss
 
 
@@ -204,29 +220,44 @@ footer{
 			&:nth-child(2){
 				width:30vw;
 				margin-left:10vw;
+				.image_container{
+				    height: calc(30vw * 9 /16);
+				}
 			}
 
 			&:nth-child(3){
 				width:35vw;
 				margin-top:10vw;
 				margin-left:3vw;
+				.image_container{
+				    height: calc(35vw * 9 /16);
+				}
 			}
 
 			&:nth-child(4){
 				width:40vw;
 				margin-top:-7vw;
+				.image_container{
+				    height: calc(40vw * 9 /16);
+				}
 			}
 
 			&:nth-child(5){
 				width:25vw;
 				margin-left:20vw;
 				margin-top:7vw;
+				.image_container{
+				    height: calc(25vw * 9 /16);
+				}
 			}
 
 			&:last-child{
 				width:45vw;
 				margin-left:17vw;
 				grid-column:span 2;
+				.image_container{
+				    height: calc(45vw * 9 /16);
+				}
 			}
 		}
 	}
@@ -241,7 +272,9 @@ footer{
 			padding:20px;
 			li{
 				list-style: disc;
-			    padding: 5px;
+			    padding: 2px;
+		        font-weight: 300;
+		        color: $brand4;
 			}
 		}
 	}
@@ -270,7 +303,7 @@ footer{
 	    }
 
 	    #service_message{
-    	    margin: -130px 0;
+    	    margin: -130px 0 0;
 		    position: relative;
 		    grid-column: span 2;
 		    width: 60vw;
@@ -280,7 +313,6 @@ footer{
 
 #about{
 	display:grid;
-	margin-top: $gutter * 2;
 	img{
 		display:none;
 	}
@@ -290,7 +322,6 @@ footer{
 	}
 
 	@include MQ($L){
-		margin-top: 9vw;
 		grid-template-columns:1fr 1fr;
 		grid-gap:$gutter;
 		img{
@@ -307,6 +338,7 @@ footer{
 	background-color:$brand4;
 	text-align:center;
 	padding: ($gutter * 4);
+	margin-top: 120px;
 
 	p,h2,h4,a{
 		color:white;
@@ -318,4 +350,8 @@ footer{
 	a{
 		text-decoration:underline;
 	}
+
+	@include MQ($M){
+        margin-top: 120px;
+    }
 }

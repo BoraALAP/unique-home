@@ -5,6 +5,7 @@
 
 html{
     @include scrollbars(0.5em, $brand5);  
+    scroll-behavior: smooth;
 }
 
 body{
@@ -19,9 +20,9 @@ body{
 }
 
 main{
-    padding: 95px ($gutter * 2) 0;
+    padding: 0 ($gutter * 2);
     display: grid;
-    grid-gap: $gutter *3;
+    
 }
 
 h1,h2,h3,h4,h5,h6{
@@ -93,7 +94,7 @@ p{
     margin-left:20px;
     color: $brand3; 
     line-height: 30px;
-    
+
 }
 
 a, button{
@@ -133,8 +134,17 @@ img{
     width:100%;
 }
 
-section{
-    
+.section{
+    opacity: 0;
+    transition: 1s ease;
+    padding-top: 90px;
+    &.in-view{
+        opacity:1;
+    }
+
+    @include MQ($M){
+        padding-top: 120px;
+    }
 }
 
 /*******************      Button       ********************/

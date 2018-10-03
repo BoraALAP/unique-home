@@ -17,6 +17,7 @@ span.line{
     top: calc(50% - 15px);
     align-items: center;
     justify-content: space-between;
+    z-index:100;
 	.arrows{
 	    display: grid;
 	    align-items: center;

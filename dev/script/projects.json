@@ -1,0 +1,40 @@
+{
+	"projects" : [
+		{
+			"title" : "Kitchen - 150 Yonge Street",
+			"img" : [
+				"assets/img/1.jpg", "assets/img/2.jpg", "assets/img/3.jpg", "assets/img/4.jpg"
+			],
+			"description" : "Lalalalla"
+		},
+		{
+			"title" : "Kitchen - 88 Avenue Road",
+			"img" : [
+				"assets/img/2.jpg", "assets/img/3.jpg", "assets/img/5.jpg"
+			],
+			"description" : "dfgdfg"
+		},
+		{
+			"title" : "Bathroom - 94 Carlow Street",
+			"img" : [
+				"assets/img/3.jpg", "assets/img/1.jpg", "assets/img/4.jpg", "assets/img/2.jpg"
+			],
+			"description" : "sdsxcs"
+		},
+		{
+			"title" : "Roofing - 65 King Street",
+			"img" : [
+				"assets/img/4.jpg", "assets/img/1.jpg", "assets/img/2.jpg"
+			],
+			"description" : "werwer"
+		},
+		{
+			"title" : "Framing - 12 Post Road",
+			"img" : [
+				"assets/img/3.jpg", "assets/img/2.jpg", "assets/img/1.jpg", "assets/img/4.jpg"
+			],
+			"description" : "yuoyuoyoy"
+		}
+	],
+	"services" : ["assets/img/1.jpg", "assets/img/2.jpg", "assets/img/3.jpg", "assets/img/4.jpg"]
+}
