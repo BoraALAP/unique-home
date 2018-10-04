@@ -272,7 +272,7 @@ footer{
 			padding:20px;
 			li{
 				list-style: disc;
-			    padding: 2px;
+			    padding: 1vw;
 		        font-weight: 300;
 		        color: $brand4;
 			}
@@ -295,7 +295,7 @@ footer{
 		position:relative;
 		.image_container{
 			position: relative;
-			height: calc(90vw * 9 /16);
+			height: calc(96vw * 72 / 75);
 			img{
 				position:absolute;
 			    top: 0;
@@ -306,7 +306,7 @@ footer{
 			}
 
 			@include MQ($M) {
-			    height: calc(82vw * 9 /16);
+			    height: calc(48vw * 72 / 75); 
 			}
 		}
 	}
