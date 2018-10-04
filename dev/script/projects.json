@@ -1,37 +1,37 @@
 {
 	"projects" : [
 		{
-			"title" : "Kitchen - 150 Yonge Street",
+			"title" : "Bathroom",
 			"img" : [
-				"assets/img/1.jpg", "assets/img/2.jpg", "assets/img/3.jpg", "assets/img/4.jpg"
+				"assets/img/bathroom1.jpg", "assets/img/bathroom2.jpg", "assets/img/bathroom3.jpg", "assets/img/bathroom4.jpg"
 			],
 			"description" : "Lalalalla"
 		},
 		{
-			"title" : "Kitchen - 88 Avenue Road",
+			"title" : "Deck",
 			"img" : [
-				"assets/img/2.jpg", "assets/img/3.jpg", "assets/img/5.jpg"
+				"assets/img/deck1.jpg", "assets/img/deck2.jpg", "assets/img/deck3.jpg", "assets/img/deck4.jpg"
 			],
 			"description" : "dfgdfg"
 		},
 		{
-			"title" : "Bathroom - 94 Carlow Street",
+			"title" : "Fencing",
 			"img" : [
-				"assets/img/3.jpg", "assets/img/1.jpg", "assets/img/4.jpg", "assets/img/2.jpg"
+				"assets/img/fencing1.jpg", "assets/img/fencing2.jpg"
 			],
 			"description" : "sdsxcs"
 		},
 		{
-			"title" : "Roofing - 65 King Street",
+			"title" : "Flooring",
 			"img" : [
-				"assets/img/4.jpg", "assets/img/1.jpg", "assets/img/2.jpg"
+				"assets/img/flooring1.jpg", "assets/img/flooring2.jpg", "assets/img/flooring3.jpg"
 			],
 			"description" : "werwer"
 		},
 		{
-			"title" : "Framing - 12 Post Road",
+			"title" : "Kitchen",
 			"img" : [
-				"assets/img/3.jpg", "assets/img/2.jpg", "assets/img/1.jpg", "assets/img/4.jpg"
+				"assets/img/kitchen1.jpg", "assets/img/kitchen2.jpg", "assets/img/kitchen3.jpg", "assets/img/kitchen4.jpg", "assets/img/kitchen5.jpg"
 			],
 			"description" : "yuoyuoyoy"
 		}

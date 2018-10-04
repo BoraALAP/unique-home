@@ -9,44 +9,102 @@
 		}return n[o].exports;
 	}var i = typeof require == "function" && require;for (var o = 0; o < r.length; o++) s(r[o]);return s;
 })({ 1: [function (require, module, exports) {
-		// const pull_data = () => {
+
 		fetch('./public/js/projects.json').then(Response => {
 			return Response.json();
 		}).then(data => {
 			const projects = data.projects;
-			console.log(projects);
+			const services = data.services;
 
-			// 
+			const container_services = document.querySelector('.services_image');
+
+			const markup_services = `
+		<div class="arrow_container">
+			<button class="arrows left_arrow"><img src="assets/svg/left_arrow.svg" class="left"/></button>
+			<div class="numbers">
+				<span class="current">1</span>
+				<span class="divider">/</span>
+				<span class="total">${services.length}</span>
+			</div>
+			<button class="arrows right_arrow"><img src="assets/svg/right_arrow.svg" class="right"/></button>
+		</div>
+		<div class="image_container">
+			${services.map(image => `<img src="${image}" class=""/>`).join('')}
+		</div>
+	`;
+
+			container_services.innerHTML += markup_services;
 
 			projects.map((project, index) => {
-				const container = document.getElementById('projects');
+				const container_projects = document.getElementById('projects');
 				const project_img = project.img;
 
-				const markup = `
-				<div class="project" aria-label="${index}">
-					<div class="project_image">
-						<div class="arrow_container">
-							<button class="arrows left_arrow"><img src="assets/svg/left_arrow.svg" class="left"/></button>
-							<div class="numbers">
-								<span class="current">1</span>
-								<span class="divider">/</span>
-								<span class="total">${project_img.length}</span>
-							</div>
-							<button class="arrows right_arrow"><img src="assets/svg/right_arrow.svg" class="right"/></button>
-						</div>
-						<div class="image_container">
-							${project_img.map(image => `<img src="${image}" class=""/>`).join('')}
-						</div>
+				const markup_project = `
+		<div class="project" aria-label="${index}">
+			<div class="project_image">
+				<div class="arrow_container">
+					<button class="arrows left_arrow"><img src="assets/svg/left_arrow.svg" class="left"/></button>
+					<div class="numbers">
+						<span class="current">1</span>
+						<span class="divider">/</span>
+						<span class="total">${project_img.length}</span>
 					</div>
-					<small class="project_name">${project.title}</small>
+					<button class="arrows right_arrow"><img src="assets/svg/right_arrow.svg" class="right"/></button>
 				</div>
-				`;
-				container.innerHTML += markup;
+				<div class="image_container">
+					${project_img.map(image => `<img src="${image}" class=""/>`).join('')}
+				</div>
+			</div>
+			<small class="project_name">${project.title}</small>
+		</div>
+		`;
+				container_projects.innerHTML += markup_project;
 			});
 
-			return projects;
-		}).then(projects => {
-			projects.map((project, index) => {
+			return [projects, services];
+		}).then(data => {
+
+			const service_container = document.querySelector(`.services_image`);
+
+			const images = [].slice.call(service_container.querySelectorAll('.image_container img'));
+			const arrows = service_container.querySelectorAll('.arrows');
+			const current = service_container.querySelector('.current');
+
+			images[0].classList.add('active');
+
+			arrows.forEach(arrow => {
+				arrow.addEventListener('click', e => {
+
+					let num;
+					images.map((image, index) => {
+
+						if (image.classList.contains('active')) {
+							image.classList.remove('active');
+
+							if (e.target.className == 'right') {
+								num = index + 1;
+							} else {
+								num = index - 1;
+							}
+
+							if (num >= images.length) {
+								num = 0;
+							} else if (num <= -1) {
+								num = images.length - 1;
+							}
+
+							console.log(num);
+							return num;
+						}
+						return num;
+					});
+
+					images[num].classList.add('active');
+					current.innerHTML = num + 1;
+				});
+			});
+
+			data[0].map((project, index) => {
 				const current_project = document.querySelectorAll(`.project`);
 				const images = [].slice.call(current_project[index].querySelectorAll('.image_container img'));
 				const arrows = current_project[index].querySelectorAll('.arrows');
@@ -89,7 +147,6 @@
 		}).catch(error => {
 			console.log(error);
 		});
-		// }
 
 		const expand = () => {
 			let nav = document.querySelector('nav').getAttribute('aria-expended');
@@ -105,6 +162,19 @@
 			document.querySelector('html').classList.toggle('disable_scroll');
 			document.querySelector('#menu_icon').classList.toggle('close');
 			expand();
+		});
+
+		document.querySelectorAll('[aria-label="quote"]').forEach(item => {
+			item.addEventListener('click', e => {
+				document.querySelector('html').classList.toggle('disable_scroll');
+				document.getElementById('quote').classList.toggle('active');
+			});
+		});
+
+		document.getElementById('quote_overlay').addEventListener("click", function (event) {
+			// If user clicks outside the element, hide it!
+			document.querySelector('html').classList.toggle('disable_scroll');
+			document.getElementById('quote').classList.toggle('active');
 		});
 
 		const nav_buttons = document.querySelectorAll('nav li');
@@ -138,6 +208,54 @@
 				} else {
 					$(this).removeClass('in-view');
 				}
+			});
+		});
+
+		function after_form_submitted(data) {
+			if (data.result == 'success') {
+				$('form#reused_form').hide();
+				$('#success_message').show();
+				$('#error_message').hide();
+			} else {
+				$('#error_message').append('<ul></ul>');
+
+				jQuery.each(data.errors, function (key, val) {
+					$('#error_message ul').append('<li>' + key + ':' + val + '</li>');
+				});
+				$('#success_message').hide();
+				$('#error_message').show();
+
+				//reverse the response on the button
+				$('button[type="button"]', $form).each(function () {
+					$btn = $(this);
+					label = $btn.prop('orig_label');
+					if (label) {
+						$btn.prop('type', 'submit');
+						$btn.text(label);
+						$btn.prop('orig_label', '');
+					}
+				});
+			} //else
+		}
+
+		$('#reused_form').submit(function (e) {
+			e.preventDefault();
+
+			$form = $(this);
+			//show some response on the button
+			$('button[type="submit"]', $form).each(function () {
+				$btn = $(this);
+				$btn.prop('type', 'button');
+				$btn.prop('orig_label', $btn.text());
+				$btn.text('Sending ...');
+			});
+
+			$.ajax({
+				type: "POST",
+				url: 'mail.php',
+				data: $form.serialize(),
+				success: after_form_submitted,
+				dataType: 'json'
 			});
 		});
 	}, {}] }, {}, [1]);

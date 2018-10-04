@@ -89,7 +89,7 @@
 					aspects of home renovations.</p>
 				<p>With our contemporary approach, we are here to add a Unique touch to our clients’ homes and help
 					them build their dreams.</p>
-				<button class="btn btn_light">Get a Free Estimate</button>
+				<button class="btn btn_light" aria-label="quote">Get a Free Estimate</button>
 			</div>
 			<button class="scroll_down" aria-label="scroll down"><a href="#projects"><img src="assets/svg/scroll_down.svg"/></a></button>
 		</section>
@@ -122,22 +122,13 @@
 					<li>Custom Deck Design & Build</li>
 					<li>Addition</li>
 					<li>Custom Home Build</li>
-					<li>Real Estate Services</li>
+					<li>Real Estate Services</li> 
 					
 				</ul>
 			</div>
 
 			<div class="services_image">
-				<div class="arrow_container">
-					<button class="arrows left_arrow"><img src="assets/svg/left_arrow.svg"/></button>
-					<div class="numbers">
-						<span class="current">1</span>
-						<span class="divider">/</span>
-						<span class="total">4</span>
-					</div>
-					<button class="arrows right_arrow"><img src="assets/svg/right_arrow.svg"/></button>
-				</div>
-				<img src="assets/img/services_img.jpg">
+				
 			</div>
 
 			<div id="service_message">
@@ -165,7 +156,7 @@
 
 				<h4>If you would like to get an Estimate:</h4>
 
-				<button class="btn btn_dark">Get a Free Estimate</button>
+				<button class="btn btn_dark" aria-label="quote">Get a Free Estimate</button>
 			</div>
 
 		</section>
@@ -188,6 +179,33 @@
 		</br>
 Built by <a href="http://www.artticfox.com" target="_blank">Arttic Fox</a>.</small>
 	</footer>
+
+
+	<div id="quote">
+		<div id="quote_container">
+			<h2>Get a Quote</h2>
+			<form role="form" method="post" id="reused_form">
+				<div class="form_row">
+					<label for="name">Name:</label>
+					<input type="text" class="form-item form-input" id="name" aria-describedby="full_name" required="required" data-error="Please,write your name" name="name"> 
+				</div>
+				<div class="form_row">
+					<label for="email">E-mail:</label>
+					<input type="email" class="form-item form-input" id="email" aria-describedby="e-mail" required="required" data-error="Please,write your e-mail" name="email"> 
+				</div>
+				<div class="form_row">
+					<label for="message">Message:</label>
+					<textarea class="form-item form-textarea" id="message" aria-describedby="message" rows="5" required="required" data-error="Please,write your message." name="message"></textarea>
+				</div>
+				<div class="form_button">
+					<button class="btn btn_light" type="submit" value="Submit">Submit</button>
+				</div>
+			</form>
+			<div id="success_message" style="width:100%; height:100%; display:none; "> <h6>Posted your message successfully!</h6> </div>
+            <div id="error_message" style="width:100%; height:100%; display:none; "> <h6>Ups!!</h6> Sorry there was an error sending </div>
+        </div>
+        <div id="quote_overlay"> </div>
+	</div>
 
 
 	<script defer src="https://use.fontawesome.com/releases/v5.0.2/js/all.js"></script>

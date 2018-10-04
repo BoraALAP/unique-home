@@ -293,6 +293,22 @@ footer{
 
 	.services_image{
 		position:relative;
+		.image_container{
+			position: relative;
+			height: calc(90vw * 9 /16);
+			img{
+				position:absolute;
+			    top: 0;
+
+			    &.active{
+			    	z-index:90;
+			    }
+			}
+
+			@include MQ($M) {
+			    height: calc(82vw * 9 /16);
+			}
+		}
 	}
 
 	@include MQ($M){
@@ -355,3 +371,58 @@ footer{
         margin-top: 120px;
     }
 }
+
+#quote{
+	height: 100vh;
+	width: 100vw;
+	position: fixed;
+	display:grid;
+	top:0;
+	z-index:30000;
+	transform:translateY(100vh);
+	transition:1s ease;
+	#quote_container{
+	    margin:auto;
+	    position: relative;
+	    background: $brand5;
+	    max-width: 600px;
+	    min-width: 350px;
+	 	display:grid;
+        height: min-content;
+	    padding: 6vw;
+	    border-radius: 15px;
+	    box-sizing: border-box;
+	    z-index:10;
+	    h2{
+	    	color:$brand1;
+	    	text-align:left;
+	    	text-transform:none;
+	    	margin:0 0 20px;
+	    }
+	    .form_row{
+	    	margin-bottom: 3vh;
+	    	display: grid;
+	    }
+	    label{
+	    	color:$white;
+	    	font-size:0.875em;
+	    }
+	}
+
+	#quote_overlay{
+		position: absolute;
+	    height: 100%;
+	    width: 100%;
+	    background-color: rgba($white, 0.7);
+	}
+
+	&.active{
+		transform:translateY(0);
+	}
+}
+
+
+
+
+
+
