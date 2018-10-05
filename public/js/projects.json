@@ -10,12 +10,12 @@
 		{
 			"title" : "Deck",
 			"img" : [
-				"assets/img/deck1.jpg", "assets/img/deck2.jpg", "assets/img/deck3.jpg", "assets/img/deck4.jpg"
+				"assets/img/deck4.jpg", "assets/img/deck1.jpg", "assets/img/deck2.jpg", "assets/img/deck3.jpg"
 			],
 			"description" : "dfgdfg"
 		},
 		{
-			"title" : "Flooring",
+			"title" : "Full House Renovation",
 			"img" : [
 				"assets/img/flooring1.jpg", "assets/img/flooring2.jpg", "assets/img/flooring3.jpg"
 			],

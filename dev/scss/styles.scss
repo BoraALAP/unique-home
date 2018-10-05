@@ -359,7 +359,7 @@ footer{
 	p,h2,h4,a{
 		color:white;
 	}
-	p{
+	p ,h2{
 		margin-left:0;
 	}
 
@@ -369,6 +369,21 @@ footer{
 
 	@include MQ($M){
         margin-top: 120px;
+    }
+
+    .svg_container{
+    	fill:$white;
+    	display:grid;
+    	grid-template-columns: auto auto;
+    	grid-gap:$gutter;
+    	height:30px;
+    	width:calc(60px + 3vw);
+    	margin:auto;
+    	img{
+    		height:30px;
+    		width:30px;
+    		margin:0;
+    	}
     }
 }
 
